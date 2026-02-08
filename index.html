@@ -9,32 +9,32 @@
 <style>
 
 :root{
---sage:#9CAF88;
---beige:#f5eedc;
---dark:#0b0f0d;
---glass:rgba(156,175,136,0.35);
---blur:blur(18px);
+--sage:#AFC9A3;
+--sageGlow:rgba(175,201,163,0.9);
+--beige:#F5EEDC;
+--beigeGlow:rgba(245,238,220,0.9);
+--dark:#050807;
 }
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:Poppins, sans-serif;
 }
 
 body{
-background:radial-gradient(circle at top,#1b2621,#070a09);
+background:radial-gradient(circle at top,#141f1a,#050807);
 color:white;
 overflow-x:hidden;
 }
 
-/* ===== INTRO ===== */
+/* ========== INTRO ========== */
 
 #intro{
 position:fixed;
 inset:0;
-background:radial-gradient(circle,#1b2621,#050707);
+background:#050807;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -42,37 +42,32 @@ z-index:9999;
 }
 
 .logo span{
-display:inline-block;
-font-size:3.6rem;
+font-size:3.8rem;
 letter-spacing:6px;
 color:var(--sage);
 opacity:0;
+display:inline-block;
 animation:reveal 1s forwards;
+text-shadow:0 0 30px var(--sageGlow);
 }
 
-.logo span:nth-child(1){animation-delay:.1s}
-.logo span:nth-child(2){animation-delay:.2s}
-.logo span:nth-child(3){animation-delay:.3s}
-.logo span:nth-child(4){animation-delay:.4s}
-.logo span:nth-child(5){animation-delay:.5s}
-.logo span:nth-child(6){animation-delay:.6s}
-.logo span:nth-child(7){animation-delay:.7s}
-.logo span:nth-child(8){animation-delay:.8s}
-.logo span:nth-child(9){animation-delay:.9s}
+.logo span:nth-child(n){
+animation-delay:calc(var(--i) * .15s);
+}
 
 @keyframes reveal{
-to{opacity:1;text-shadow:0 0 30px rgba(156,175,136,.9);}
+to{opacity:1;}
 }
 
 .intro-hide{
-animation:introFade 2s forwards 3s;
+animation:fadeout 2s forwards 3s;
 }
 
-@keyframes introFade{
+@keyframes fadeout{
 to{opacity:0;visibility:hidden;}
 }
 
-/* ===== HERO ===== */
+/* ========== HERO ========== */
 
 .hero{
 height:100vh;
@@ -88,37 +83,74 @@ position:relative;
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(to bottom,rgba(0,0,0,.7),rgba(0,0,0,.2));
+background:linear-gradient(to bottom,rgba(0,0,0,.7),rgba(0,0,0,.25));
 }
 
 .hero-box{
 position:relative;
-background:rgba(0,0,0,.45);
-padding:70px;
-border-radius:30px;
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,.15);
+background:rgba(175,201,163,.12);
+padding:80px;
+border-radius:35px;
+backdrop-filter:blur(14px);
 text-align:center;
+border:1px solid rgba(175,201,163,.5);
+box-shadow:0 0 35px rgba(175,201,163,.25);
 }
 
 .hero-box h1{
 font-size:3.2rem;
 letter-spacing:5px;
 color:var(--beige);
+text-shadow:0 0 25px var(--beigeGlow);
 }
 
 #typed{
 margin-top:12px;
 color:var(--sage);
 letter-spacing:2px;
+font-size:1.1rem;
+text-shadow:0 0 15px var(--sageGlow);
 }
 
-/* ===== SECTIONS ===== */
+/* ===== SCROLL INDICATOR ===== */
+
+.scroll-indicator{
+position:absolute;
+bottom:25px;
+left:50%;
+transform:translateX(-50%);
+width:30px;
+height:50px;
+border:2px solid var(--sage);
+border-radius:20px;
+box-shadow:0 0 15px var(--sageGlow);
+}
+
+.scroll-indicator::after{
+content:"";
+width:6px;
+height:6px;
+background:var(--beige);
+position:absolute;
+left:50%;
+top:10px;
+transform:translateX(-50%);
+border-radius:50%;
+animation:scrollDot 1.5s infinite;
+box-shadow:0 0 10px var(--beigeGlow);
+}
+
+@keyframes scrollDot{
+0%{top:10px;opacity:1;}
+100%{top:30px;opacity:0;}
+}
+
+/* ========== SECTIONS ========== */
 
 section{
 padding:100px 10%;
 opacity:0;
-transform:translateY(40px);
+transform:translateY(50px);
 transition:1.2s;
 }
 
@@ -131,19 +163,23 @@ transform:translateY(0);
 text-align:center;
 font-size:2.6rem;
 color:var(--sage);
+text-shadow:0 0 20px var(--sageGlow);
 margin-bottom:50px;
 }
 
-/* ===== ABOUT ===== */
+/* ========== ABOUT ========== */
 
 .about{
-background:rgba(0,0,0,.45);
+background:rgba(175,201,163,.12);
 padding:50px;
 border-radius:30px;
-backdrop-filter:blur(12px);
+text-align:center;
+backdrop-filter:blur(14px);
+border:1px solid rgba(175,201,163,.4);
+box-shadow:0 0 30px rgba(175,201,163,.2);
 }
 
-/* ===== GALLERY ===== */
+/* ========== GALLERY ========== */
 
 .gallery{
 display:grid;
@@ -153,15 +189,17 @@ gap:25px;
 
 .gallery img{
 width:100%;
-border-radius:20px;
+border-radius:22px;
 transition:.5s;
+cursor:pointer;
 }
 
 .gallery img:hover{
-transform:scale(1.12);
+transform:scale(1.15);
+box-shadow:0 0 40px rgba(175,201,163,.4);
 }
 
-/* ===== VIDEO ===== */
+/* ========== VIDEO ========== */
 
 .video-box{
 max-width:900px;
@@ -171,29 +209,37 @@ overflow:hidden;
 box-shadow:0 0 40px rgba(0,0,0,.8);
 }
 
-/* ===== CONTACT ===== */
+/* ========== CONTACT ========== */
 
 .contact{
-background:rgba(0,0,0,.45);
+background:rgba(175,201,163,.12);
 padding:50px;
 border-radius:30px;
 text-align:center;
+backdrop-filter:blur(14px);
+border:1px solid rgba(175,201,163,.4);
+box-shadow:0 0 30px rgba(175,201,163,.2);
 }
 
 .btn{
-padding:16px 40px;
+padding:16px 45px;
 border-radius:40px;
-background:var(--sage);
-color:#0b0f0d;
+background:linear-gradient(135deg,var(--sage),var(--beige));
+color:#050807;
+font-weight:700;
 text-decoration:none;
-font-weight:600;
+box-shadow:0 0 20px var(--sageGlow);
 }
 
-/* ===== MOBILE ===== */
+.btn:hover{
+box-shadow:0 0 35px var(--beigeGlow);
+}
+
+/* ========== MOBILE ========== */
 
 @media(max-width:768px){
 .logo span{font-size:2.2rem;}
-.hero-box{padding:40px;}
+.hero-box{padding:45px;}
 .hero-box h1{font-size:2.2rem;}
 section{padding:70px 6%;}
 }
@@ -206,8 +252,15 @@ section{padding:70px 6%;}
 <!-- INTRO -->
 <div id="intro">
 <div class="logo">
-<span>M</span><span>E</span><span>H</span><span>D</span><span>I</span>
-<span>K</span><span>H</span><span>A</span><span>N</span>
+<span style="--i:1">M</span>
+<span style="--i:2">E</span>
+<span style="--i:3">H</span>
+<span style="--i:4">D</span>
+<span style="--i:5">I</span>
+<span style="--i:6">K</span>
+<span style="--i:7">H</span>
+<span style="--i:8">A</span>
+<span style="--i:9">N</span>
 </div>
 </div>
 
@@ -217,6 +270,8 @@ section{padding:70px 6%;}
 <h1>MEHDI KHAN</h1>
 <div id="typed"></div>
 </div>
+
+<div class="scroll-indicator"></div>
 </div>
 
 <!-- ABOUT -->
@@ -227,7 +282,7 @@ Mumbai based actor & model with experience in films, web series and commercials.
 </div>
 </section>
 
-<!-- GALLERY -->
+<!-- PORTFOLIO -->
 <section>
 <h2 class="title">Portfolio</h2>
 <div class="gallery">
@@ -258,7 +313,7 @@ Mumbai based actor & model with experience in films, web series and commercials.
 
 <script>
 
-/* INTRO HIDE */
+/* INTRO EXIT */
 setTimeout(()=>{
 document.getElementById("intro").classList.add("intro-hide");
 },2500);
@@ -275,25 +330,25 @@ hi=(hi+1)%heroImgs.length;
 slide();
 setInterval(slide,4500);
 
-/* TYPED TEXT */
-const texts=["ACTOR","MODEL","PERFORMER","MUMBAI BASED ARTIST"];
-let ti=0,ci=0,del=false;
+/* TYPING */
+const words=["ACTOR","MODEL","PERFORMER","MUMBAI BASED ARTIST"];
+let w=0,c=0,del=false;
 const typed=document.getElementById("typed");
 
-function typing(){
-let word=texts[ti];
-typed.textContent=word.substring(0,ci);
-if(!del){ci++; if(ci>word.length) del=true;}
-else{ci--; if(ci===0){del=false; ti=(ti+1)%texts.length;}}
-setTimeout(typing,120);
+function type(){
+let word=words[w];
+typed.textContent=word.substring(0,c);
+if(!del){c++; if(c>word.length) del=true;}
+else{c--; if(c===0){del=false; w=(w+1)%words.length;}}
+setTimeout(type,120);
 }
-typing();
+type();
 
 /* SECTION REVEAL */
 const sections=document.querySelectorAll("section");
 window.addEventListener("scroll",()=>{
 sections.forEach(s=>{
-if(s.getBoundingClientRect().top < window.innerHeight-100){
+if(s.getBoundingClientRect().top < window.innerHeight-120){
 s.classList.add("show");
 }
 });
