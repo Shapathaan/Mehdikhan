@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Actor Portfolio</title>
+
+<style>
+/* =========================
+   ROOT THEME
+========================= */
+:root{
+--green:#2f6f68;
+--beige:#e7dbc7;
+--glass:rgba(255,255,255,0.15);
+--blur:blur(18px);
+--white:#ffffff;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#1f3d36,#2f6f68);
+color:white;
+overflow-x:hidden;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+background-size:cover;
+background-position:center;
+transition:background-image 1.5s ease-in-out;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+padding:40px;
+background:var(--glass);
+backdrop-filter:var(--blur);
+border-radius:20px;
+animation:fadeUp 2s ease;
+}
+
+.hero h1{
+font-size:3rem;
+color:var(--beige);
+letter-spacing:2px;
+}
+
+.hero p{
+margin-top:10px;
+font-size:1.1rem;
+opacity:0.9;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+section{
+padding:80px 10%;
+}
+
+.title{
+text-align:center;
+font-size:2.4rem;
+color:var(--beige);
+margin-bottom:40px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+.about-box{
+background:var(--glass);
+backdrop-filter:var(--blur);
+padding:40px;
+border-radius:20px;
+text-align:center;
+}
+
+/* =========================
+   GALLERY
+========================= */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:18px;
+cursor:pointer;
+transition:0.5s;
+}
+
+.gallery img:hover{
+transform:scale(1.08);
+box-shadow:0 0 25px rgba(0,0,0,0.6);
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact-box{
+background:var(--glass);
+backdrop-filter:var(--blur);
+padding:40px;
+border-radius:20px;
+text-align:center;
+}
+
+.btn{
+display:inline-block;
+margin:10px;
+padding:14px 30px;
+border-radius:30px;
+background:var(--green);
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:0.4s;
+}
+
+.btn:hover{
+background:var(--beige);
+color:black;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+text-align:center;
+padding:30px;
+background:#152b27;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeUp{
+0%{opacity:0;transform:translateY(40px);}
+100%{opacity:1;transform:translateY(0);}
+}
+
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media(max-width:768px){
+.hero h1{
+font-size:2.2rem;
+}
+section{
+padding:60px 6%;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HERO ================= -->
+<div class="hero" id="hero">
+<div class="hero-content">
+<h1>ACTOR NAME</h1>
+<p>Film • Web Series • Commercials</p>
+</div>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<section>
+<h2 class="title reveal">About</h2>
+<div class="about-box reveal">
+<p>
+Professional actor with experience in films, web series, fashion shoots and advertisements. Passionate about storytelling, screen presence and versatile performances.
+</p>
+</div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section>
+<h2 class="title reveal">Portfolio</h2>
+
+<div class="gallery">
+
+<img src="img1.jpg">
+<img src="img2.jpg">
+<img src="img3.jpg">
+<img src="img4.jpg">
+<img src="img5.jpg">
+<img src="img6.jpg">
+
+</div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section>
+<h2 class="title reveal">Contact</h2>
+
+<div class="contact-box reveal">
+
+<a class="btn" href="tel:+919999999999">Call</a>
+<a class="btn" href="mailto:actor@email.com">Email</a>
+
+</div>
+</section>
+
+<footer>
+<p>© 2026 Actor Portfolio</p>
+</footer>
+
+<script>
+/* ================= HERO SLIDESHOW ================= */
+
+const images=[
+"hero1.jpg",
+"hero2.jpg",
+"hero3.jpg"
+];
+
+let index=0;
+const hero=document.getElementById("hero");
+
+function changeBg(){
+hero.style.backgroundImage=`url(${images[index]})`;
+index=(index+1)%images.length;
+}
+
+changeBg();
+setInterval(changeBg,4000);
+
+/* ================= SCROLL REVEAL ================= */
+
+const reveals=document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll",()=>{
+reveals.forEach(r=>{
+let top=r.getBoundingClientRect().top;
+if(top < window.innerHeight-80){
+r.classList.add("active");
+}
+});
+});
+</script>
+
+</body>
+</html>
