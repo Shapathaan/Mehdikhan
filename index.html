@@ -9,10 +9,10 @@
 <style>
 
 :root{
---sage:#AFC9A3;
---sageGlow:rgba(175,201,163,0.9);
---beige:#F5EEDC;
---beigeGlow:rgba(245,238,220,0.9);
+--sage:#93C572;        /* Pistachio */
+--sageGlow:rgba(147,197,114,.9);
+--beige:#FAF6EE;
+--beigeGlow:rgba(250,246,238,.9);
 --dark:#050807;
 }
 
@@ -24,7 +24,7 @@ font-family:Poppins, sans-serif;
 }
 
 body{
-background:radial-gradient(circle at top,#141f1a,#050807);
+background:radial-gradient(circle at top,#162218,#050807);
 color:white;
 overflow-x:hidden;
 }
@@ -42,7 +42,7 @@ z-index:9999;
 }
 
 .logo span{
-font-size:3.8rem;
+font-size:3.6rem;
 letter-spacing:6px;
 color:var(--sage);
 opacity:0;
@@ -88,13 +88,13 @@ background:linear-gradient(to bottom,rgba(0,0,0,.7),rgba(0,0,0,.25));
 
 .hero-box{
 position:relative;
-background:rgba(175,201,163,.12);
+background:rgba(147,197,114,.15);
 padding:80px;
 border-radius:35px;
 backdrop-filter:blur(14px);
 text-align:center;
-border:1px solid rgba(175,201,163,.5);
-box-shadow:0 0 35px rgba(175,201,163,.25);
+border:1px solid rgba(147,197,114,.5);
+box-shadow:0 0 35px rgba(147,197,114,.25);
 }
 
 .hero-box h1{
@@ -164,19 +164,33 @@ text-align:center;
 font-size:2.6rem;
 color:var(--sage);
 text-shadow:0 0 20px var(--sageGlow);
-margin-bottom:50px;
+margin-bottom:40px;
 }
 
 /* ========== ABOUT ========== */
 
 .about{
-background:rgba(175,201,163,.12);
+background:rgba(147,197,114,.15);
 padding:50px;
 border-radius:30px;
 text-align:center;
 backdrop-filter:blur(14px);
-border:1px solid rgba(175,201,163,.4);
-box-shadow:0 0 30px rgba(175,201,163,.2);
+border:1px solid rgba(147,197,114,.4);
+box-shadow:0 0 30px rgba(147,197,114,.2);
+}
+
+.vitals{
+margin-top:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+}
+
+.vital{
+background:rgba(0,0,0,.45);
+padding:14px;
+border-radius:12px;
+border:1px solid rgba(147,197,114,.4);
 }
 
 /* ========== GALLERY ========== */
@@ -196,7 +210,7 @@ cursor:pointer;
 
 .gallery img:hover{
 transform:scale(1.15);
-box-shadow:0 0 40px rgba(175,201,163,.4);
+box-shadow:0 0 40px rgba(147,197,114,.4);
 }
 
 /* ========== VIDEO ========== */
@@ -212,13 +226,13 @@ box-shadow:0 0 40px rgba(0,0,0,.8);
 /* ========== CONTACT ========== */
 
 .contact{
-background:rgba(175,201,163,.12);
+background:rgba(147,197,114,.15);
 padding:50px;
 border-radius:30px;
 text-align:center;
 backdrop-filter:blur(14px);
-border:1px solid rgba(175,201,163,.4);
-box-shadow:0 0 30px rgba(175,201,163,.2);
+border:1px solid rgba(147,197,114,.4);
+box-shadow:0 0 30px rgba(147,197,114,.2);
 }
 
 .btn{
@@ -278,7 +292,27 @@ section{padding:70px 6%;}
 <section>
 <h2 class="title">About</h2>
 <div class="about">
-Mumbai based actor & model with experience in films, web series and commercials.
+
+<p>
+Mehdi Khan is a passionate actor and model based in Mumbai with experience in films, web series, fashion shoots and advertisements.
+</p>
+
+<div class="vitals">
+<div class="vital">Age: 23</div>
+<div class="vital">Height: 5'5"</div>
+<div class="vital">Weight: 47 kg</div>
+
+<div class="vital">Bust: 33</div>
+<div class="vital">Waist: 26</div>
+<div class="vital">Hips: 34</div>
+
+<div class="vital">Skin Tone: Olive Fair</div>
+<div class="vital">Hair Colour: Caramel Brown</div>
+
+<div class="vital">Location: Mumbai</div>
+<div class="vital">Languages: Hindi, English, Urdu</div>
+</div>
+
 </div>
 </section>
 
