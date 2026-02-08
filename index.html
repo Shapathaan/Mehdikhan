@@ -4,12 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Actor Portfolio</title>
+<title>Mehdi Khan | Actor </title>
 
 <style>
-/* =========================
-   ROOT THEME
-========================= */
+
 :root{
 --green:#2f6f68;
 --beige:#e7dbc7;
@@ -31,9 +29,8 @@ color:white;
 overflow-x:hidden;
 }
 
-/* =========================
-   HERO
-========================= */
+/* ================= HERO ================= */
+
 .hero{
 height:100vh;
 display:flex;
@@ -59,17 +56,17 @@ background:rgba(0,0,0,0.55);
 .hero-content{
 position:relative;
 z-index:2;
-padding:40px;
+padding:45px;
 background:var(--glass);
 backdrop-filter:var(--blur);
-border-radius:20px;
+border-radius:22px;
 animation:fadeUp 2s ease;
 }
 
 .hero h1{
-font-size:3rem;
+font-size:3.2rem;
 color:var(--beige);
-letter-spacing:2px;
+letter-spacing:3px;
 }
 
 .hero p{
@@ -78,34 +75,46 @@ font-size:1.1rem;
 opacity:0.9;
 }
 
-/* =========================
-   SECTIONS
-========================= */
+/* ================= SECTIONS ================= */
+
 section{
 padding:80px 10%;
 }
 
 .title{
 text-align:center;
-font-size:2.4rem;
+font-size:2.5rem;
 color:var(--beige);
 margin-bottom:40px;
 }
 
-/* =========================
-   ABOUT
-========================= */
+/* ================= ABOUT ================= */
+
 .about-box{
 background:var(--glass);
 backdrop-filter:var(--blur);
 padding:40px;
-border-radius:20px;
+border-radius:22px;
 text-align:center;
+line-height:1.7;
 }
 
-/* =========================
-   GALLERY
-========================= */
+.vitals{
+margin-top:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:18px;
+}
+
+.vital-card{
+background:rgba(0,0,0,0.35);
+padding:15px;
+border-radius:14px;
+font-size:0.95rem;
+}
+
+/* ================= GALLERY ================= */
+
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -124,21 +133,20 @@ transform:scale(1.08);
 box-shadow:0 0 25px rgba(0,0,0,0.6);
 }
 
-/* =========================
-   CONTACT
-========================= */
+/* ================= CONTACT ================= */
+
 .contact-box{
 background:var(--glass);
 backdrop-filter:var(--blur);
 padding:40px;
-border-radius:20px;
+border-radius:22px;
 text-align:center;
 }
 
 .btn{
 display:inline-block;
 margin:10px;
-padding:14px 30px;
+padding:14px 32px;
 border-radius:30px;
 background:var(--green);
 color:white;
@@ -152,18 +160,16 @@ background:var(--beige);
 color:black;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* ================= FOOTER ================= */
+
 footer{
 text-align:center;
 padding:30px;
 background:#152b27;
 }
 
-/* =========================
-   ANIMATIONS
-========================= */
+/* ================= ANIMATIONS ================= */
+
 @keyframes fadeUp{
 0%{opacity:0;transform:translateY(40px);}
 100%{opacity:1;transform:translateY(0);}
@@ -180,41 +186,61 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* ================= MOBILE ================= */
+
 @media(max-width:768px){
-.hero h1{
-font-size:2.2rem;
+.hero h1{font-size:2.3rem;}
+section{padding:60px 6%;}
 }
-section{
-padding:60px 6%;
-}
-}
+
 </style>
 </head>
 
 <body>
 
 <!-- ================= HERO ================= -->
+
 <div class="hero" id="hero">
 <div class="hero-content">
-<h1>ACTOR NAME</h1>
-<p>Film • Web Series • Commercials</p>
+<h1>MEHDI KHAN</h1>
+<p>Actor • Model • Performer</p>
 </div>
 </div>
 
 <!-- ================= ABOUT ================= -->
+
 <section>
 <h2 class="title reveal">About</h2>
+
 <div class="about-box reveal">
+
 <p>
-Professional actor with experience in films, web series, fashion shoots and advertisements. Passionate about storytelling, screen presence and versatile performances.
+Mehdi Khan is a passionate actor and model based in Mumbai with experience in films, web series, fashion shoots, and advertisements. Known for expressive screen presence, versatility, and strong dedication towards craft.
 </p>
+
+<div class="vitals">
+
+<div class="vital-card">Age: 23</div>
+<div class="vital-card">Height: 5'5"</div>
+<div class="vital-card">Weight: 47 kg</div>
+
+<div class="vital-card">Bust: 33</div>
+<div class="vital-card">Waist: 26</div>
+<div class="vital-card">Hips: 34</div>
+
+<div class="vital-card">Skin Tone: Olive Fair</div>
+<div class="vital-card">Hair: Caramel Brown</div>
+
+<div class="vital-card">Location: Mumbai</div>
+<div class="vital-card">Languages: Hindi, English, Urdu</div>
+
+</div>
+
 </div>
 </section>
 
 <!-- ================= GALLERY ================= -->
+
 <section>
 <h2 class="title reveal">Portfolio</h2>
 
@@ -231,23 +257,28 @@ Professional actor with experience in films, web series, fashion shoots and adve
 </section>
 
 <!-- ================= CONTACT ================= -->
+
 <section>
 <h2 class="title reveal">Contact</h2>
 
 <div class="contact-box reveal">
 
-<a class="btn" href="tel:+919999999999">Call</a>
-<a class="btn" href="mailto:actor@email.com">Email</a>
+<a class="btn" href="mailto:iammehdikhan2025@gmail.com">Email</a>
+
+<a class="btn" href="https://www.instagram.com/iammehdikhan?igsh=a2E0aGkwYXZrZ3du&utm_source=qr" target="_blank">
+Instagram
+</a>
 
 </div>
 </section>
 
 <footer>
-<p>© 2026 Actor Portfolio</p>
+<p>© 2026 Mehdi Khan — Actor Portfolio</p>
 </footer>
 
 <script>
-/* ================= HERO SLIDESHOW ================= */
+
+/* ===== HERO SLIDESHOW ===== */
 
 const images=[
 "hero1.jpg",
@@ -266,7 +297,7 @@ index=(index+1)%images.length;
 changeBg();
 setInterval(changeBg,4000);
 
-/* ================= SCROLL REVEAL ================= */
+/* ===== SCROLL REVEAL ===== */
 
 const reveals=document.querySelectorAll(".reveal");
 
@@ -278,6 +309,7 @@ r.classList.add("active");
 }
 });
 });
+
 </script>
 
 </body>
