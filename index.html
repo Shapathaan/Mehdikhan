@@ -22,16 +22,14 @@ box-sizing:border-box;
 font-family:Poppins, sans-serif;
 }
 
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
 background:linear-gradient(180deg,#8F9779,#7e866b);
 color:var(--dark);
 }
 
-/* ================= NAV ================= */
+/* NAV */
 
 nav{
 position:fixed;
@@ -46,24 +44,15 @@ backdrop-filter:blur(10px);
 z-index:1000;
 }
 
-nav h1{
-font-size:1.4rem;
-letter-spacing:2px;
-color:#fff;
-}
+nav h1{color:#fff;}
 
 nav a{
 margin-left:25px;
 text-decoration:none;
 color:#fff;
-font-weight:500;
 }
 
-nav a:hover{
-color:var(--beige);
-}
-
-/* ================= HERO ================= */
+/* HERO */
 
 .hero{
 min-height:100vh;
@@ -72,47 +61,21 @@ grid-template-columns:1fr 1fr;
 align-items:center;
 padding:120px 8% 60px;
 gap:60px;
-background:radial-gradient(circle at top,var(--sage),#6f765f);
-}
-
-.hero-img{
-position:relative;
 }
 
 .hero-img img{
 width:100%;
 max-width:420px;
 border-radius:220px 220px 40px 40px;
-object-fit:cover;
 box-shadow:0 30px 50px rgba(0,0,0,.25);
 }
 
-.circle{
-position:absolute;
-width:320px;
-height:320px;
-background:linear-gradient(135deg,#9da58a,var(--beige));
-border-radius:50%;
-left:-80px;
-top:80px;
-z-index:-1;
-}
-
 .hero-text h2{
-font-size:3.2rem;
-line-height:1.2;
+font-size:3rem;
 color:var(--beige);
-text-shadow:0 0 15px rgba(223,202,160,.6);
 }
 
-.hero-text p{
-margin-top:20px;
-font-size:1.1rem;
-max-width:420px;
-color:#f6f1e6;
-}
-
-/* ================= EXPLORE ================= */
+/* EXPLORE */
 
 .explore{
 text-align:center;
@@ -120,24 +83,7 @@ padding:80px 8%;
 background:var(--beige);
 }
 
-.explore h2{
-font-size:2.5rem;
-margin-bottom:40px;
-}
-
-.explore-links a{
-padding:14px 34px;
-background:linear-gradient(135deg,var(--sage),#9da58a);
-color:white;
-text-decoration:none;
-border-radius:40px;
-font-weight:600;
-margin:10px;
-display:inline-block;
-box-shadow:0 8px 18px rgba(0,0,0,.25);
-}
-
-/* ================= SECTIONS ================= */
+/* SECTIONS */
 
 section{
 padding:100px 8%;
@@ -146,20 +92,16 @@ background:var(--beigeSoft);
 
 .section-title{
 font-size:2.5rem;
-margin-bottom:50px;
 text-align:center;
+margin-bottom:40px;
 }
 
-/* ================= ABOUT ================= */
+/* ABOUT */
 
 .about-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:60px;
-}
-
-.about-text{
-line-height:1.8;
+gap:50px;
 }
 
 .vitals{
@@ -169,33 +111,75 @@ gap:15px;
 }
 
 .vital{
-background:linear-gradient(145deg,#f4e6c8,#e2cfa2);
+background:#f2e5c6;
 padding:14px;
 border-radius:12px;
-box-shadow:inset 0 1px 0 rgba(255,255,255,.6);
 }
 
-/* ================= PORTFOLIO ================= */
+/* AUTO SWIPE ROW */
+
+.slider{
+display:flex;
+gap:20px;
+overflow:hidden;
+}
+
+.slider-track{
+display:flex;
+animation:scroll 40s linear infinite;
+}
+
+.slider img{
+width:260px;
+border-radius:18px;
+margin-right:20px;
+cursor:pointer;
+}
+
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
+/* GRID */
 
 .portfolio-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
 gap:25px;
+margin-top:60px;
 }
 
 .portfolio-grid img{
 width:100%;
-border-radius:20px;
-transition:.4s;
+border-radius:18px;
 cursor:pointer;
-box-shadow:0 20px 30px rgba(0,0,0,.25);
+transition:.4s;
 }
 
 .portfolio-grid img:hover{
-transform:scale(1.08);
+transform:scale(1.05);
 }
 
-/* ================= SHOWREEL ================= */
+/* LIGHTBOX */
+
+#lightbox{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.9);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:5000;
+}
+
+#lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:20px;
+}
+
+/* VIDEO */
 
 .video-wrap{
 max-width:900px;
@@ -205,36 +189,34 @@ overflow:hidden;
 box-shadow:0 30px 50px rgba(0,0,0,.3);
 }
 
-/* ================= CONTACT ================= */
+/* CONTACT */
 
 .contact-box{
 max-width:600px;
 margin:auto;
-background:linear-gradient(145deg,#f4e6c8,#e2cfa2);
+background:#f2e5c6;
 padding:60px;
 border-radius:30px;
 text-align:center;
-box-shadow:0 25px 40px rgba(0,0,0,.25);
 }
 
 .contact-box a{
-display:inline-block;
-margin:10px;
 padding:14px 36px;
-background:linear-gradient(135deg,var(--sage),#9da58a);
+background:var(--sage);
 color:white;
 text-decoration:none;
 border-radius:40px;
-font-weight:600;
+margin:10px;
+display:inline-block;
 }
 
-/* ================= FLOATING INSTA ================= */
+/* FLOATING IG */
 
 .floating-insta{
 position:fixed;
 right:20px;
 bottom:30px;
-background:linear-gradient(135deg,var(--sage),#9da58a);
+background:var(--sage);
 color:white;
 width:55px;
 height:55px;
@@ -244,10 +226,7 @@ align-items:center;
 justify-content:center;
 font-weight:bold;
 text-decoration:none;
-box-shadow:0 10px 25px rgba(0,0,0,.3);
 }
-
-/* ================= FOOTER ================= */
 
 footer{
 text-align:center;
@@ -256,23 +235,13 @@ background:var(--sage);
 color:white;
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media(max-width:900px){
 .hero{
 grid-template-columns:1fr;
 text-align:center;
 }
-
-.hero-img img{
-margin:auto;
-}
-
-.circle{
-left:50%;
-transform:translateX(-50%);
-}
-
 .about-grid{
 grid-template-columns:1fr;
 }
@@ -283,7 +252,6 @@ grid-template-columns:1fr;
 
 <body>
 
-<!-- NAV -->
 <nav>
 <h1>MEHDI KHAN</h1>
 <div>
@@ -295,99 +263,142 @@ grid-template-columns:1fr;
 </nav>
 
 <!-- HERO -->
-<section class="hero">
 
+<section class="hero">
 <div class="hero-img">
-<div class="circle"></div>
 <img src="hero1.jpg">
 </div>
 
 <div class="hero-text">
 <h2>Welcome to my corner of the world.</h2>
-<p>Actor & model based in Mumbai, working across films, web series, fashion shoots and commercials.</p>
-</div>
-
-</section>
-
-<!-- EXPLORE -->
-<section class="explore">
-<h2>Explore</h2>
-<div class="explore-links">
-<a href="#about">About</a>
-<a href="#portfolio">Portfolio</a>
-<a href="#showreel">Showreel</a>
-<a href="#contact">Contact</a>
+<p>Actor & Model based in Mumbai.</p>
 </div>
 </section>
 
 <!-- ABOUT -->
+
 <section id="about">
 <h2 class="section-title">About</h2>
 
 <div class="about-grid">
 
-<div class="about-text">
+<div>
 Mehdi Khan is a passionate actor and model based in Mumbai with experience in films, web series, fashion shoots and advertisements.
 </div>
 
 <div class="vitals">
-<div class="vital">Age: 23</div>
-<div class="vital">Height: 5'5"</div>
-<div class="vital">Weight: 47 kg</div>
-<div class="vital">Bust: 33</div>
-<div class="vital">Waist: 26</div>
-<div class="vital">Hips: 34</div>
-<div class="vital">Skin Tone: Olive Fair</div>
-<div class="vital">Hair: Caramel Brown</div>
-<div class="vital">Location: Mumbai</div>
-<div class="vital">Languages: Hindi, English, Urdu</div>
+<div class="vital">Age:23</div>
+<div class="vital">Height:5'5"</div>
+<div class="vital">Weight:47kg</div>
+<div class="vital">Bust:33</div>
+<div class="vital">Waist:26</div>
+<div class="vital">Hips:34</div>
+<div class="vital">Skin:Olive Fair</div>
+<div class="vital">Hair:Caramel Brown</div>
+<div class="vital">Location:Mumbai</div>
+<div class="vital">Languages:Hindi,English,Urdu</div>
 </div>
 
 </div>
 </section>
 
 <!-- PORTFOLIO -->
+
 <section id="portfolio">
 <h2 class="section-title">Portfolio</h2>
 
-<div class="portfolio-grid">
+<!-- AUTO SLIDER -->
+<div class="slider">
+<div class="slider-track">
+
 <img src="img1.jpg">
 <img src="img2.jpg">
 <img src="img3.jpg">
 <img src="img4.jpg">
 <img src="img5.jpg">
 <img src="img6.jpg">
+<img src="img7.jpg">
+<img src="img8.jpg">
+
+<img src="img1.jpg">
+<img src="img2.jpg">
+<img src="img3.jpg">
+<img src="img4.jpg">
+<img src="img5.jpg">
+<img src="img6.jpg">
+<img src="img7.jpg">
+<img src="img8.jpg">
+
+</div>
+</div>
+
+<!-- GRID -->
+<div class="portfolio-grid">
+<img src="img9.jpg">
+<img src="img10.jpg">
+<img src="img11.jpg">
+<img src="img12.jpg">
+<img src="img13.jpg">
+<img src="img14.jpg">
+<img src="img15.jpg">
+<img src="img16.jpg">
+  
 </div>
 
 </section>
 
 <!-- SHOWREEL -->
+
 <section id="showreel">
 <h2 class="section-title">Showreel</h2>
-
 <div class="video-wrap">
 <video src="reel.mp4" controls width="100%"></video>
 </div>
-
 </section>
 
 <!-- CONTACT -->
+
 <section id="contact">
 <h2 class="section-title">Contact</h2>
-
 <div class="contact-box">
 <a href="mailto:iammehdikhan2025@gmail.com">Email</a>
 <a href="tel:+919999999999">Call</a>
 </div>
-
 </section>
 
-<!-- FLOATING INSTA -->
+<!-- LIGHTBOX -->
+
+<div id="lightbox">
+<img id="lightbox-img">
+</div>
+
+<!-- FLOATING IG -->
+
 <a class="floating-insta" href="https://www.instagram.com/iammehdikhan?igsh=a2E0aGkwYXZrZ3du&utm_source=qr" target="_blank">IG</a>
 
 <footer>
 © 2026 Mehdi Khan
 </footer>
+
+<script>
+
+/* LIGHTBOX */
+
+const imgs=document.querySelectorAll("img");
+const lightbox=document.getElementById("lightbox");
+const lightImg=document.getElementById("lightbox-img");
+
+imgs.forEach(img=>{
+img.onclick=()=>{
+if(img.src.includes("hero1")) return;
+lightbox.style.display="flex";
+lightImg.src=img.src;
+}
+});
+
+lightbox.onclick=()=>lightbox.style.display="none";
+
+</script>
 
 </body>
 </html>
